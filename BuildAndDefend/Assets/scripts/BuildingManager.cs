@@ -5,17 +5,32 @@ using UnityEngine;
 public class BuildingManager : MonoBehaviour
 {
     private Camera mainCamera;
-    [SerializeField] private Transform Building;
+    private BuildingTypeListOS buildingTypeList;
+    private BuildingTypeOS buildingType;
+    
  
     private void Start()
     {
         mainCamera =  Camera.main;
+
+        //takeing tha objects from BuildingTypeListOS
+        buildingTypeList = Resources.Load<BuildingTypeListOS>(typeof(BuildingTypeListOS).Name);
+        buildingType = buildingTypeList.list[0];
     }
     private void Update()
     {
+        // debug
           if(Input.GetMouseButtonDown(0))
           {
-            Instantiate(Building, GetMouseWorldPosition(), Quaternion.identity);
+            Instantiate(buildingType.Prefab, GetMouseWorldPosition(), Quaternion.identity);
+          }
+          if(Input.GetKeyDown(KeyCode.S))
+          {
+              buildingType = buildingTypeList.list[1];
+          }
+          if(Input.GetKeyDown(KeyCode.W))
+          {
+              buildingType = buildingTypeList.list[0];
           }
     }
     // get Mouse position  

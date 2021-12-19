@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b6dd4ccedc18cd43a1704a5289d9e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Building: {fileID: 8869904721122931901, guid: 18864a79cc60b2543ad52b5dd8f6ee7c, type: 3}
+  pfWoodharvester: {fileID: 0}
 --- !u!4 &2046749745
 Transform:
   m_ObjectHideFlags: 0
