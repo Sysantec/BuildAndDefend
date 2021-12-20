@@ -7,4 +7,6 @@ public class BuildingTypeOS : ScriptableObject
 {
      public string nameString;
      public Transform Prefab;
+     public ResourceGeneratorData resourceGeneratorData;
+     
 }
