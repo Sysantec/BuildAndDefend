@@ -8,14 +8,18 @@ public class BuildingManager : MonoBehaviour
     private BuildingTypeListOS buildingTypeList;
     private BuildingTypeOS buildingType;
     
+     
+    private void Awake()
+    {
+        //takeing the objects from BuildingTypeListOS
+        buildingTypeList = Resources.Load<BuildingTypeListOS>(typeof(BuildingTypeListOS).Name);
+        buildingType = buildingTypeList.list[0];
+    }
  
     private void Start()
     {
         mainCamera =  Camera.main;
 
-        //takeing tha objects from BuildingTypeListOS
-        buildingTypeList = Resources.Load<BuildingTypeListOS>(typeof(BuildingTypeListOS).Name);
-        buildingType = buildingTypeList.list[0];
     }
     private void Update()
     {
